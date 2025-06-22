@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #fc7045, #fd1d1d, #b43a8f);
+      font-family: 'Comic Sans MS', cursive;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 60px;
+      animation: bounce 1s infinite;
+    }
+
+    p {
+      font-size: 24px;
+      margin-top: 10px;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: rgb(255, 0, 191);
+      animation: fall 3s linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div>
+    <h1>🎂 Happy Birthday SMRITI! 🎉</h1>
+    <p>Wishing you a truly beautiful birthday.</p>
+    <p>MAY GOD BLESS YOU</p>
+    
+  </div>
+
+  <script>
+    // Confetti effect
+    for (let i = 0; i < 100; i++) {
+      let confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.top = Math.random() * -100 + 'px';
+      confetti.style.backgroundColor = hsl(${Math.random() * 360}, 100%, 50%);
+      confetti.style.animationDuration = 2 + Math.random() * 3 + 's';
+      document.body.appendChild(confetti);
+    }
+  </script>
+
+</body>
+</html>
